@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ss.p.mapper.TableMapper" >
+	
+   <select id="getTableAllDate"   resultType="java.lang.String">
+   		select su from qwe
+   </select>
+   <update id="updateName" parameterType="java.lang.String">
+	   UPDATE qwe set su = #{name,jdbcType=VARCHAR} where su = '语文'
+   </update>
+</mapper>
