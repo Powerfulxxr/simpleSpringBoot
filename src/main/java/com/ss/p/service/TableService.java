@@ -33,7 +33,7 @@ public class TableService {
 	@Transactional(rollbackFor = Exception.class)
 	public int updateName(String name){
 		int i = mapper.updateName(name);
-		int a = 1/0;
+//		int a = 1/0;
 		return i;
 	}
 }

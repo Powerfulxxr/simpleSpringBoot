@@ -11,14 +11,18 @@
 	<script src="${base}/lib/jquery-1.11.0.min.js"></script>
 	<script>
 		$(function(){
-			$("button").click(function(){
+			$("#b1").click(function(){
 				$.getJSON("${base}/getDataList",function(data){
 					$("h3").html(data.join("-"));
 				});
-				<#--$.getJSON("${base}/updateName",{name:"语文2018"},function(data){-->
-					<#--$("h4").html(data);-->
-				<#--});-->
 			});
+            $("#b2").click(function(){
+				$.getJSON("${base}/updateName",{name:"语文2018"},function(d){
+                    $.getJSON("${base}/getDataList",function(data){
+                        $("h4").html(data);
+                    });
+				});
+            });
 		});
 	</script>
 </head>
@@ -30,5 +34,7 @@
     <p>${base}</p>
 	<h3></h3>
 	<h4></h4>
-<button value="2222">22222</button>
+<button id="b1" value="2222">22222</button>
+	<br>
+<button id="b2" value="333">333</button>
 </body>
